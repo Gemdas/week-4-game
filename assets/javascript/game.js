@@ -1,8 +1,8 @@
 $(document).ready(function() {
-var cards=[new card('uno',"assets/images/Uno.jpg", 25, 180)];
-cards.push( new card('hearthstone', "assets/images/Hearthstone.png", 20, 150));
-cards.push( new card('bakugan', "assets/images/Bakugan.jpg", 8, 120));
-cards.push( new card('duel Master', "assets/images/DuelMaster.jpg", 5, 100));
+var cards=[new card('Uno',"assets/images/Uno.jpg", 25, 180)];
+cards.push( new card('Hearthstone', "assets/images/Hearthstone.png", 20, 150));
+cards.push( new card('Bakugan', "assets/images/Bakugan.jpg", 8, 120));
+cards.push( new card('Duel Master', "assets/images/DuelMaster.jpg", 6, 100));
 var img=[];
 
 var isLocked=false;
@@ -133,9 +133,13 @@ function resetPrep(didWin)
 	{
 		$("#First-Line").html("YOU WIN, hit reset to play again");
 	}
-	else
+	else if (($(player).attr("alt")!="Duel Master"))
 	{
 		$("#First-Line").html("YOU LOSE, hit reset to try again");
+	}
+	else
+	{
+		$("#First-Line").html("YOU DIED, but you were playing as Duel Masters, the game time forgot... sooooo yeah good work you WIN!!!");
 	}
 	$("#reset").html("<button id='reset-button'>RESET</button>");
 }
