@@ -1,3 +1,2 @@
 # week-4-game
-* Current Errors
-* Bolshack Dragon can not win
+* Ever character has a winning strat
