@@ -131,11 +131,11 @@ function resetPrep(didWin)
 	$("#Second-Line").empty();
 	if(didWin)
 	{
-		$("#First-Line").html("YOU WIN");
+		$("#First-Line").html("YOU WIN, hit reset to play again");
 	}
 	else
 	{
-		$("#First-Line").html("YOU LOSE");
+		$("#First-Line").html("YOU LOSE, hit reset to try again");
 	}
 	$("#reset").html("<button id='reset-button'>RESET</button>");
 }
