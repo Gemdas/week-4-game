@@ -78,10 +78,13 @@ $("#Attack-Button").click(function()
 	}
 	//reduce the enemy hp
 	$(enemy).attr("health", (parseInt($(enemy).attr("health"))-parseInt($(player).attr("power"))));
-	$(player).attr("power", (parseInt($(player).attr("power"))+playerPower));	
+	$("#First-Line").html("You did "+($(player).attr("power")) +" damage to " + ($(enemy).attr("alt")));
+	$(player).attr("power", (parseInt($(player).attr("power"))+playerPower));
 	if(parseInt($(enemy).attr("health"))<=0)
 	{
 		$('#Fighter-Section').empty();
+		$("#First-Line").html("you defeated " +($(enemy).attr("alt")));
+		$("#Second-Line").empty();
 		if ($('#Enemy-Area').is(':empty'))
 		{
 			resetPrep(true)
@@ -96,8 +99,6 @@ $("#Attack-Button").click(function()
 	}
 	//reduce player hp
 	$(player).attr("health", (parseInt($(player).attr("health"))-parseInt($(enemy).attr("power"))));
-	$("#First-Line").html("You did "+($(player).attr("power")) +" damage to " + ($(enemy).attr("alt")));
-
 	//increase player power
 	$("#Second-Line").html(($(enemy).attr("alt")) + " did "+ ($(enemy).attr("power")) +" damage to you");
 	//update the titles
